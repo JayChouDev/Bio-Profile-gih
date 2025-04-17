@@ -100,12 +100,19 @@
   
   /* Ícones personalizados  */
   
-  .link-iconGITHUB,
+  
   .link-iconLINKDIN,
   .link-iconINSTAGRAM {
     width: 20px;
     height: 20px;
     object-fit: cover;
+  }
+  .link-iconGITHUB {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    border-radius: 50%;
+
   }
   
   /* ---------- Rodapé ---------- */
