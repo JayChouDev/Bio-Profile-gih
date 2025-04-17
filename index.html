@@ -1,0 +1,73 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Link na Bio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-content">
+      <img src="ProfileGhimbli-400x400 (1).jpg" alt="Minha Foto" class="perfil-foto">
+      <h1>JayChouDev</h1>
+      <input type="checkbox" id="theme-toggle" class="l">
+    </div>
+  </header>
+
+  <main class="site-main">
+    <nav class="links-container">
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/kauã-medeiros-honorato-3495a0344/" class="link-card">
+        <img src="icone-linkedin-ronde-originale.png"
+             alt="Ícone LinkedIn"
+             class="link-iconLINKDIN">
+        LINKEDIN
+      </a>
+  
+      <!-- GitHub -->
+      <a href="https://github.com/JayChouDev" class="link-card">
+        <img src="github.svg"
+             alt="Ícone GitHub"
+             class="link-iconGITHUB">
+        GITHUB
+      </a>
+  
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/seu_perfil/" class="link-card">
+        <img src="instagram.png"
+             alt="Ícone Instagram"
+             class="link-iconINSTAGRAM">
+        INSTAGRAM
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 JayChouDev. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- modo escuro -->
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Verifica se o usuário já tinha uma preferência salva
+    if (localStorage.getItem('dark-mode') === 'true') {
+      body.classList.add('dark-mode');
+      toggle.checked = true;
+    }
+
+    toggle.addEventListener('change', () => {
+      if (toggle.checked) {
+        body.classList.add('dark-mode');
+        localStorage.setItem('dark-mode', 'true');
+      } else {
+        body.classList.remove('dark-mode');
+        localStorage.setItem('dark-mode', 'false');
+      }
+    });
+  </script>
+</body>
+</html>

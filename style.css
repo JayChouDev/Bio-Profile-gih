@@ -1,0 +1,201 @@
+:root {
+    --roxo-boreal: #7F00FF;
+    --azul-boreal: #3F00FF;
+    --verde-boreal: #00FF7F;
+    --rosa-boreal: #FF00FF;
+    --preto-espacial: #0D0D0D;
+    --branco-neon: #F0F0F0;
+  }
+  
+  /* ---------- Estilos Globais ---------- */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, var(--roxo-boreal), var(--azul-boreal), var(--verde-boreal), var(--rosa-boreal));
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease infinite;
+    transition: background 0.4s ease;
+  }
+  
+  /* Modo escuro */
+  body.dark-mode {
+    background: var(--preto-espacial);
+    animation: none;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* ---------- Cabeçalho ---------- */
+  
+  .site-header {
+    background-color: transparent;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .perfil-foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--preto-espacial);
+    object-fit: cover;
+  }
+  
+  .site-header h1 {
+    font-size: 1.8rem;
+    color: var(--branco-neon);
+  }
+  
+  /* ---------- Conteúdo Principal ---------- */
+  
+  .site-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  
+  .links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 15px;
+    text-decoration: none;
+    color: var(--branco-neon);
+    background: var(--preto-espacial);
+    font-size: 1.1rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(127, 0, 255, 0.4);
+    transition: transform 0.2s;
+  }
+  
+  .link-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Ícones personalizados  */
+  
+  .link-iconGITHUB,
+  .link-iconLINKDIN,
+  .link-iconINSTAGRAM {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+  }
+  
+  /* ---------- Rodapé ---------- */
+  
+  .site-footer {
+    background: transparent;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .site-footer p {
+    font-size: 0.9rem;
+    color: var(--branco-neon);
+  }
+  
+  /* ---------- Toggle Switch (.l) ---------- */
+  
+  .l {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 0.75em;
+    box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
+    color: #fdea7b;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15em;
+    width: 3em;
+    height: 1.5em;
+    transition:
+      background-color 0.1s 0.3s ease-out,
+      box-shadow 0.1s 0.3s ease-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  /* Botão switch */
+  .l:before,
+  .l:after {
+    content: "";
+    display: block;
+  }
+  
+  .l:before {
+    background-color: #d7d7d7;
+    border-radius: 50%;
+    width: 1.2em;
+    height: 1.2em;
+    transition:
+      background-color 0.1s 0.3s ease-out,
+      transform 0.3s ease-out;
+    z-index: 1;
+  }
+  
+  .l:after {
+    background:
+      linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% / 50% 100%,
+      repeating-linear-gradient(90deg, #bbb 0, #bbb 20%, #999 20%, #999 40%) 0 50% / 50% 100%,
+      radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
+    background-repeat: no-repeat;
+    border: 0.25em solid transparent;
+    border-left: 0.4em solid #d8d8d8;
+    width: 1.2em;
+    height: 1em;
+    box-sizing: border-box;
+    transform: translateX(-22.5%);
+    transform-origin: 25% 50%;
+    transition:
+      border-left-color 0.1s 0.3s ease-out,
+      transform 0.3s ease-out;
+  }
+  
+  /* Modo escuro ativado */
+  .l:checked {
+    background-color: rgba(0, 0, 0, 0.45);
+    box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
+  }
+  
+  .l:checked:before {
+    background-color: currentColor;
+    transform: translateX(125%);
+  }
+  
+  .l:checked:after {
+    border-left-color: currentColor;
+    transform: translateX(-2.5%) rotateY(180deg);
+  }
+  
+  .l:focus {
+    outline: 0;
+  }
+  
