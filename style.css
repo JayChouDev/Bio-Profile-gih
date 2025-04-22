@@ -67,6 +67,8 @@ body.dark-mode {
 /* ---------- Frases de Apresentação ---------- */
 
 .apresentacao1 {
+  font-size: 1.5rem;
+  color: var(--branco-neon);
   margin-top: -220px;
   font-weight: bold;
 }
@@ -74,6 +76,8 @@ body.dark-mode {
 /* Corrige em telas menores */
 @media (max-width: 600px) {
   .apresentacao1 {
+    font-size: 1.2rem;
+    
     margin-top: -100px; /* ou um valor que funcione melhor visualmente */
   }
 }
