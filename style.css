@@ -85,6 +85,23 @@ body.dark-mode {
     margin-top: -100px; /* ou um valor que funcione melhor visualmente */
   }
 }
+.apresentacao {
+  font-size: 1.5rem;
+  color: var(--branco-neon);
+  text-align: center;
+  margin: 20px 0;
+  
+  font-weight: bold;
+}
+
+/* Corrige em telas menores */
+@media (max-width: 600px) {
+  .apresentacao1 {
+    font-size: 1.2rem;
+    
+    margin-top: -100px; /* ou um valor que funcione melhor visualmente */
+  }
+}
 
 
 /* ---------- Conteúdo Principal ---------- */
