@@ -64,6 +64,7 @@
   /* ---------- Conteúdo Principal ---------- */
   
   .site-main {
+    flex-direction: column;
     flex: 1;
     display: flex;
     align-items: center;
@@ -205,4 +206,78 @@
   .l:focus {
     outline: 0;
   }
+  .apresentacao {
+    color: var(--branco-neon); /* já assume o neon se você tiver isso como uma variável */
+    font-size: 1.2rem;
+    
+    text-align: center;
+    margin-bottom: 0px;
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+  }
   
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(-15px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+.apresentacao {
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+}
+
+/* ---------- Rodapé ---------- */
+.site-footer {
+  background: transparent;
+  text-align: center;
+  padding: 15px;
+}
+
+.skills-title {
+  font-size: 1.5rem;
+  color: var(--branco-neon);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  color: var(--branco-neon);
+}
+
+/* Estilos para os ícones de skills */
+.icones-footer {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espaçamento entre os ícones */
+  margin-top: 10px;
+}
+
+.icone {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.icone:hover {
+  transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+}
