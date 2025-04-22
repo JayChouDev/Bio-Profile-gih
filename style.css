@@ -94,12 +94,9 @@ body.dark-mode {
   font-weight: bold;
 }
 
-/* Corrige em telas menores */
 @media (max-width: 600px) {
   .apresentacao1 {
-    font-size: 1.2rem;
-    
-    margin-top: -100px; /* ou um valor que funcione melhor visualmente */
+    margin-top: 10px; /* ou 0 */
   }
 }
 
