@@ -46,6 +46,8 @@ body.dark-mode {
   display: inline-flex;
   align-items: center;
   gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .perfil-foto {
@@ -59,7 +61,23 @@ body.dark-mode {
 .site-header h1 {
   font-size: 1.8rem;
   color: var(--branco-neon);
+  margin: 0;
 }
+
+/* ---------- Frases de Apresentação ---------- */
+
+.apresentacao1 {
+  margin-top: -220px;
+  font-weight: bold;
+}
+
+/* Corrige em telas menores */
+@media (max-width: 600px) {
+  .apresentacao1 {
+    margin-top: -100px; /* ou um valor que funcione melhor visualmente */
+  }
+}
+
 
 /* ---------- Conteúdo Principal ---------- */
 
@@ -99,7 +117,7 @@ body.dark-mode {
   transform: scale(1.05);
 }
 
-/* Ícones personalizados  */
+/* Ícones personalizados */
 
 .link-iconLINKDIN,
 .link-iconINSTAGRAM {
@@ -107,6 +125,7 @@ body.dark-mode {
   height: 20px;
   object-fit: cover;
 }
+
 .link-iconGITHUB {
   width: 20px;
   height: 20px;
@@ -127,6 +146,18 @@ body.dark-mode {
   color: var(--branco-neon);
 }
 
+.icones-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.icone {
+  width: 30px;
+  height: 30px;
+}
+
 /* ---------- Toggle Switch (.l) ---------- */
 
 .l {
@@ -139,17 +170,12 @@ body.dark-mode {
   padding: 0.15em;
   width: 3em;
   height: 1.5em;
-  transition:
-    background-color 0.1s 0.3s ease-out,
-    box-shadow 0.1s 0.3s ease-out;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
   appearance: none;
   cursor: pointer;
   position: relative;
 }
 
-/* Botão switch */
 .l:before,
 .l:after {
   content: "";
@@ -161,9 +187,7 @@ body.dark-mode {
   border-radius: 50%;
   width: 1.2em;
   height: 1.2em;
-  transition:
-    background-color 0.1s 0.3s ease-out,
-    transform 0.3s ease-out;
+  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
   z-index: 1;
 }
 
@@ -180,89 +204,14 @@ body.dark-mode {
   box-sizing: border-box;
   transform: translateX(-22.5%);
   transform-origin: 25% 50%;
-  transition:
-    border-left-color 0.1s 0.3s ease-out,
-    transform 0.3s ease-out;
+  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
 }
 
-/* Modo escuro ativado */
 .l:checked {
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
 
 .l:checked:before {
-  background-color: currentColor;
-  transform: translateX(125%);
-}
-
-.l:checked:after {
-  border-left-color: currentColor;
-  transform: translateX(-2.5%) rotateY(180deg);
-}
-
-.l:focus {
-  outline: 0;
-}
-
-/* ---------- Estilos para as frases ---------- */
-.apresentacao, .apresentacao1 {
-  color: var(--branco-neon);
-  font-size: 1.2rem;
-  text-align: center;
-  animation: fadeInUp 1.2s ease forwards;
-  opacity: 0;
-  line-height: 1.6;
-  margin-top: 150px;
-  margin-bottom: -220px; /* Ajustando a margem para reduzir o espaço */
-  position: relative;
-  z-index: 1;
-}
-
-/* Efeito de fundo animado */
-.apresentacao::before,
-.apresentacao1::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 130%;
-  height: 140%;
-  background: linear-gradient(135deg, var(--roxo-boreal), var(--azul-boreal), var(--verde-boreal), var(--rosa-boreal));
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
-  border-radius: 25px;
-  z-index: -1;
-  opacity: 0.5;
-  box-shadow: 0 0 25px rgba(127, 0, 255, 0.6);
-  filter: blur(10px);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(-15px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.icones-footer {
-  display: flex;
-  justify-content: center;
-  gap: 15px; /* Espaçamento entre os ícones */
-  margin-top: 10px;
-}
-
-.icone {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.icone:hover {
-  transform: scale(1.2); /* Aumenta o tamanho do ícone ao passar o mouse */
+  transform: translateX(1.5em);
 }
