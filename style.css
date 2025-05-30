@@ -72,7 +72,7 @@ body.dark-mode {
   font-size: 1.5rem;
   color: var(--branco-neon);
   text-align: center;
-  margin: 20px 0;
+  margin: 0px 0;
   
   font-weight: bold;
 }
@@ -181,7 +181,6 @@ body.dark-mode {
 }
 
 /* ---------- Toggle Switch (.l) ---------- */
-
 .l {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 0.75em;
@@ -189,51 +188,33 @@ body.dark-mode {
   color: #fdea7b;
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start; /* Alinha o conteúdo à esquerda */
   padding: 0.15em;
   width: 3em;
   height: 1.5em;
-  transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+  transition: background-color 0.1s ease-out, box-shadow 0.1s ease-out;
   appearance: none;
   cursor: pointer;
   position: relative;
 }
 
-.l:before,
-.l:after {
-  content: "";
-  display: block;
-}
-
 .l:before {
+  content: "";
   background-color: #d7d7d7;
   border-radius: 50%;
   width: 1.2em;
   height: 1.2em;
-  transition: background-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+  transition: background-color 0.1s ease-out, transform 0.3s ease-out;
   z-index: 1;
+  position: absolute;
+  left: 0.2em; /* Inicia na posição inicial à esquerda */
 }
 
-.l:after {
-  background:
-    linear-gradient(transparent 50%, rgba(0, 0, 0, 0.15) 0) 0 50% / 50% 100%,
-    repeating-linear-gradient(90deg, #bbb 0, #bbb 20%, #999 20%, #999 40%) 0 50% / 50% 100%,
-    radial-gradient(circle at 50% 50%, #888 25%, transparent 26%);
-  background-repeat: no-repeat;
-  border: 0.25em solid transparent;
-  border-left: 0.4em solid #d8d8d8;
-  width: 1.2em;
-  height: 1em;
-  box-sizing: border-box;
-  transform: translateX(-22.5%);
-  transform-origin: 25% 50%;
-  transition: border-left-color 0.1s 0.3s ease-out, transform 0.3s ease-out;
+.l:checked:before {
+  transform: translateX(1.5em); /* Mover a lâmpada para a direita */
 }
 
 .l:checked {
   background-color: rgba(0, 0, 0, 0.45);
   box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
-}
-
-.l:checked:before {
-  transform: translateX(1.5em);
 }
